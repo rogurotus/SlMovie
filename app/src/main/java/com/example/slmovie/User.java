@@ -37,7 +37,7 @@ public class User
         auth = auth_;
         db = FirebaseFirestore.getInstance();
         // нельзя инициализировать так фильмы надо в макетах
-        load_films();
+        //load_films();
         //load_all_films();
     }
 
