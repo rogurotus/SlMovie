@@ -36,9 +36,6 @@ public class User
     {
         auth = auth_;
         db = FirebaseFirestore.getInstance();
-        // нельзя инициализировать так фильмы надо в макетах
-        //load_films();
-        //load_all_films();
     }
 
     private static void add(Movie movie)
@@ -210,50 +207,5 @@ public class User
         {
             delete(temp);
         }
-    }
-
-    private static void load_films()
-    {
-
-
-    }
-
-    public static void load_all_films()
-    {
-        db.collection("movie")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
-                {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task)
-                    {
-                        if (task.isSuccessful())
-                        {
-                            Gson gson = new Gson();
-                            for (QueryDocumentSnapshot document : task.getResult())
-                            {
-                                Log.e("TAGload", document.getId() + " => " + document.getData());
-                                //movies.add(document.toObject(Movie.class));
-                                String movie_whith_id = document.getData().toString();
-                                movie_whith_id = movie_whith_id.substring("{movie_json={".length(),movie_whith_id.length()-2);
-                                movie_whith_id = "{" + movie_whith_id + ",\"id\":" + "\"" + document.getId() + "\"" + "}";
-
-                                Log.e("TAGMY", movie_whith_id);
-                                movies.add(gson.fromJson(movie_whith_id, Movie.class));
-                            }
-                        }
-                        else
-                        {
-                            Log.e("TAGload", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-    }
-
-    public static Movie get_good_movie()
-    {
-        //TODO сделать любой рандомный генератор фильмов
-        // например рандомный фильм схожий по жанру
-        return null;
     }
 }

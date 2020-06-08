@@ -115,6 +115,7 @@ public class HomeFragment extends Fragment {
                                                                     Log.d("TAG", "get failed with ", task.getException());
                                                                 }
 
+                                                                films.clear();
                                                                 Log.e("TTT",User.my_movie.size() + "");
                                                                 for(Movie movie: User.movies)
                                                                 {
@@ -130,7 +131,7 @@ public class HomeFragment extends Fragment {
                                                                     if(!find)
                                                                     {
                                                                         films.add(movie);
-                                                                        Log.e("TAG", "GOVNO");
+                                                                        Log.e("BAG","3");
                                                                     }
                                                                 }
                                                                 RecyclerView rv = root.findViewById(R.id.rv_movie);
@@ -150,6 +151,7 @@ public class HomeFragment extends Fragment {
                             }
                             else
                             {
+                                films.clear();
                                 for(Movie movie: User.movies)
                                 {
                                     boolean find = false;
@@ -164,7 +166,7 @@ public class HomeFragment extends Fragment {
                                     if(!find)
                                     {
                                         films.add(movie);
-                                        Log.e("TAG", "GOVNO");
+                                        Log.e("BAG","2");
                                     }
                                 }
                                 RecyclerView rv = root.findViewById(R.id.rv_movie);
@@ -176,6 +178,7 @@ public class HomeFragment extends Fragment {
         }
         else
         {
+            films.clear();
             for(Movie movie: User.movies)
             {
                 boolean find = false;
@@ -189,8 +192,8 @@ public class HomeFragment extends Fragment {
                 }
                 if(!find)
                 {
+                    Log.e("BAG","1");
                     films.add(movie);
-                    Log.e("TAG", "GOVNO");
                 }
             }
             RecyclerView rv = root.findViewById(R.id.rv_movie);

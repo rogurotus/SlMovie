@@ -59,7 +59,7 @@ public class DetailMovie extends AppCompatActivity
             {
                 it = movie;
                 name.setText("Название: " + movie.name);
-                //description.setText(movie.descr);
+                description.setText(movie.descr);
                 String s = "Жанр: ";
                 for(String genre : movie.genre)
                 {
