@@ -38,8 +38,9 @@ public class Search extends Activity
         Intent intent = getIntent();
 
         final String name = intent.getStringExtra("name");
-        final String genre = intent.getStringExtra("genre");
 
+        final String genre = intent.getStringExtra("genre");
+        Log.e("res","\'" + name + "\' \'" + genre + "\'");
 
         if (result == null) {
             User.movies = new ArrayList<>();
@@ -67,34 +68,37 @@ public class Search extends Activity
                             result = new ArrayList<>();
                             RecyclerView rv = findViewById(R.id.films);
                             List<Movie> search_movies_name = new ArrayList<>();
-                            if(name == "")
+                            if(name.equals(""))
                             {
+
                                 search_movies_name = User.movies;
+                                Log.e("res","GOOD " + search_movies_name.size());
                             }
                             else
                             {
                                 for(Movie movie: User.movies)
                                 {
-                                    if(movie.name == name)
+                                    if(movie.name.equals(name))
                                     {
                                         search_movies_name.add(movie);
+                                        Log.e("res",search_movies_name.size() + "");
                                     }
                                 }
                             }
 
                             List<Movie> result = new ArrayList<>();
-                            if(genre == "")
+                            if(genre.equals(""))
                             {
                                 result = search_movies_name;
                             }
                             else
                             {
-                                for(Movie movie: User.movies)
+                                for(Movie movie: search_movies_name)
                                 {
                                     boolean find = false;
                                     for(String _genre: movie.genre)
                                     {
-                                        if(genre == _genre)
+                                        if(genre.equals(_genre))
                                         {
                                             find = true;
                                             break;
@@ -106,7 +110,7 @@ public class Search extends Activity
                                     }
                                 }
                             }
-
+                            Log.e("res",result.size() + "");
                             rv.setLayoutManager(new GridLayoutManager(User.hz, 1));
                             rv.setAdapter(new MovieAdapter(result));
                         }

@@ -7,7 +7,7 @@
     tools:context=".ui.notifications.NotificationsFragment">
 
     <EditText
-        android:id="@+id/name_f"
+        android:id="@+id/name_fz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/genre_f"
+        android:id="@+id/genre_fz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -28,7 +28,7 @@
         android:text="Жанр"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_f"
+        app:layout_constraintTop_toBottomOf="@+id/name_fz"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -39,6 +39,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genre_f" />
+        app:layout_constraintTop_toBottomOf="@+id/genre_fz" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

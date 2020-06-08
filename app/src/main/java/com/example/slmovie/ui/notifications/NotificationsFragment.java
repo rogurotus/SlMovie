@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,11 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.slmovie.DetailMovie;
 import com.example.slmovie.R;
-import com.example.slmovie.User;
-import com.example.slmovie.ui.dashboard.DashboardFragment;
-import com.google.android.material.badge.BadgeUtils;
 
 public class NotificationsFragment extends Fragment {
 
@@ -37,8 +32,8 @@ public class NotificationsFragment extends Fragment {
         final View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         button = root.findViewById(R.id.button3);
-        name_f = root.findViewById(R.id.name_f);
-        genre_f = root.findViewById(R.id.genre_f);
+        name_f = root.findViewById(R.id.name_fz);
+        genre_f = root.findViewById(R.id.genre_fz);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -46,8 +41,9 @@ public class NotificationsFragment extends Fragment {
             {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, Search.class);
-                intent.putExtra("name",name_f.getText());
-                intent.putExtra("genre", genre_f.getText());
+                //Log.e("test", name_f.getText().toString());
+                intent.putExtra("name",name_f.getText().toString());
+                intent.putExtra("genre", genre_f.getText().toString());
                 context.startActivity(intent);
             }
         });
