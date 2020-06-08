@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "67445946736",
+    "firebase_url": "https://slmovie.firebaseio.com",
+    "project_id": "slmovie",
+    "storage_bucket": "slmovie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67445946736:android:4c83996ad277c8269537b5",
+        "android_client_info": {
+          "package_name": "com.example.slmovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67445946736-vd98ln8sdli8p5bovf6tdutuuujm1bsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsQKWzp3PC_4VUtGX9vL6-wga9Clk7Yvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67445946736-vd98ln8sdli8p5bovf6tdutuuujm1bsh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
