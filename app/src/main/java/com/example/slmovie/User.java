@@ -36,6 +36,9 @@ public class User
     {
         auth = auth_;
         db = FirebaseFirestore.getInstance();
+        hz = null;
+        my_movie = null;
+        movies = null;
     }
 
     private static void add(Movie movie)
