@@ -109,38 +109,40 @@ public class HomeFragment extends Fragment {
                                                                     {
                                                                         Log.d("TAG", "No such document");
                                                                     }
+                                                                    Log.e("TAGMY", "TEST1");
                                                                 }
                                                                 else
                                                                 {
                                                                     Log.d("TAG", "get failed with ", task.getException());
                                                                 }
+                                                                Log.e("TAGMY", "TEST2");
 
-                                                                films.clear();
-                                                                Log.e("TTT",User.my_movie.size() + "");
-                                                                for(Movie movie: User.movies)
-                                                                {
-                                                                    boolean find = false;
-                                                                    for(Movie my: User.my_movie)
-                                                                    {
-                                                                        if(my.id.equals(movie.id))
-                                                                        {
-                                                                            find = true;
-                                                                            break;
-                                                                        }
-                                                                    }
-                                                                    if(!find)
-                                                                    {
-                                                                        films.add(movie);
-                                                                        Log.e("BAG","3");
-                                                                    }
-                                                                }
-                                                                RecyclerView rv = root.findViewById(R.id.rv_movie);
-                                                                rv.setLayoutManager(new GridLayoutManager(User.hz, 1));
-                                                                rv.setAdapter(new MovieAdapter(films));
                                                             }
                                                         });
                                                     }
-
+                                                    films.clear();
+                                                    Log.e("TTT",User.my_movie.size() + "");
+                                                    for(Movie movie: User.movies)
+                                                    {
+                                                        boolean find = false;
+                                                        for(Movie my: User.my_movie)
+                                                        {
+                                                            if(my.id.equals(movie.id))
+                                                            {
+                                                                find = true;
+                                                                break;
+                                                            }
+                                                        }
+                                                        if(!find)
+                                                        {
+                                                            films.add(movie);
+                                                            Log.e("BAG","3");
+                                                        }
+                                                    }
+                                                    RecyclerView rv = root.findViewById(R.id.rv_movie);
+                                                    rv.setLayoutManager(new GridLayoutManager(User.hz, 1));
+                                                    rv.setAdapter(new MovieAdapter(films));
+                                                    Log.e("BAG",films.size() + "");
                                                 }
                                                 else
                                                 {
@@ -166,11 +168,11 @@ public class HomeFragment extends Fragment {
                                     if(!find)
                                     {
                                         films.add(movie);
-                                        Log.e("BAG","2");
                                     }
                                 }
                                 RecyclerView rv = root.findViewById(R.id.rv_movie);
                                 rv.setLayoutManager(new GridLayoutManager(User.hz, 1));
+                                Log.e("BAG",films.size() + "");
                                 rv.setAdapter(new MovieAdapter(films));
                             }
                         }
@@ -196,6 +198,7 @@ public class HomeFragment extends Fragment {
                     films.add(movie);
                 }
             }
+            Log.e("BAG",films.size() + "");
             RecyclerView rv = root.findViewById(R.id.rv_movie);
             rv.setLayoutManager(new GridLayoutManager(User.hz, 1));
             rv.setAdapter(new MovieAdapter(films));
