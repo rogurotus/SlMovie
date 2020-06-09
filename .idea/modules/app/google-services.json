@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "588215378821",
+    "firebase_url": "https://slmovie-4c100.firebaseio.com",
+    "project_id": "slmovie-4c100",
+    "storage_bucket": "slmovie-4c100.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588215378821:android:f51160abca37fffe4f9aec",
+        "android_client_info": {
+          "package_name": "com.example.slmovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588215378821-mfdhb2668q2oup4ikdsqnmaadqf0gqah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.slmovie",
+            "certificate_hash": "ed907e1ac1e07d9521013c5420ebc840c0164117"
+          }
+        },
+        {
+          "client_id": "588215378821-pqccktjferl5pkmpjcuhgjk68ljkqqkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSHECkNsC-CaMj9pX4GjJmASeMD0CRn-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588215378821-pqccktjferl5pkmpjcuhgjk68ljkqqkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
