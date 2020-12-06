@@ -28,6 +28,10 @@
             tools:replace="android:launchMode"
             android:launchMode="standard" />
         <activity
+            android:name=".MovieManager"
+            tools:replace="android:launchMode"
+            android:launchMode="standard" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
