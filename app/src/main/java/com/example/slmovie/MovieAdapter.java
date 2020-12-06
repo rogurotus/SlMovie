@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         holder.genre.setText(s.substring(0,s.length()-2));
         holder.itemView.setTag(values.get(position));
         holder.itemView.setOnClickListener(onClickListener);
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Movie item = (Movie) v.getTag();
+                Context context = v.getContext();
+                Intent intent = new Intent(context, MovieManager.class);
+                intent.putExtra("id", item.id);
+                context.startActivity(intent);
+                return true;
+            }
+        });
     }
     @Override
     public int getItemCount() { return values.size(); }
@@ -70,14 +83,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     final private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Log.e("click","1");
             Movie item = (Movie) view.getTag();
             Context context = view.getContext();
-            Log.e("click","2");
             Intent intent = new Intent(context, DetailMovie.class);
-            Log.e("click","3");
             intent.putExtra("id", item.id);
-            Log.e("click","4");
             context.startActivity(intent);
         }
     };
