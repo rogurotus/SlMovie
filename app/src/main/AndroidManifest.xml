@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.slmovie">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,26 +14,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver
+            android:name=".MovieReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity
             android:name=".DetailMovie"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity
             android:name=".ui.notifications.Search"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity
             android:name=".MainFragment"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity
             android:name=".MovieManager"
-            tools:replace="android:launchMode"
-            android:launchMode="standard" />
+            android:launchMode="standard"
+            tools:replace="android:launchMode" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
